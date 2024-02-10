@@ -120,9 +120,9 @@ if __name__ == "__main__":
             total+=labels.size(0)
             correct+=predicted.eq(labels).sum().item()
 
-accuracy = correct/total
-test_loss /= len(testloader.dataset)
-print(f"Test Loss: {test_loss}, test accuracy: {accuracy}")
+    accuracy = correct/total
+    test_loss /= len(testloader.dataset)
+    print(f"Test Loss: {test_loss}, test accuracy: {accuracy}")
 
 PATH = r'C:\Users\anjan\OneDrive\Documents\edge-utra\trash_classifier.pth'
 torch.save(classifier.state_dict(),PATH)

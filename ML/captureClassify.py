@@ -3,10 +3,14 @@ from torchvision import transforms
 from PIL import Image
 import cv2
 import serial
-from trashclassifier import TrashClassifier
+from EDGEai_finetunedModel import TrashClassifier
 import time
+import requests
 
-modelpath = r'C:\Users\anjan\Downloads\finetunedClassifier.pth'
+modelpath = r'C:\Users\anjan\Downloads\EDGE1.pth'
+
+backend_url = 'http://127.0.0.1:5000'
+update_stats_url = f'{backend_url}/update_stats'
 
 classifier = TrashClassifier()
 classifier.load_state_dict(torch.load(modelpath))
@@ -18,7 +22,7 @@ transform = transforms.Compose([
     transforms.Normalize([0.7422, 0.7366, 0.7117], [0.3060, 0.3009, 0.3302])
 ])
 
-ser = serial.Serial('COM5', 9600, 8)
+#ser = serial.Serial('COM5', 9600, 8)
 
 def capture_and_process_photo():
     returnVal, photo = cam.read();
@@ -34,16 +38,24 @@ def capture_and_process_photo():
     _, predicted_class = output.max(1)
 
     #waste categories: electronic, organic, recycle, trash
-    class_names = ['e', 'o', 'r', 't']
+    class_names = ['electronic', 'organic', 'recycle', 'trash']
     predicted_class_name = class_names[predicted_class[0].item()]
 
+    payload = {'trash_class': predicted_class_name}
+    response = requests.post(update_stats_url, json=payload)
+
+    if response.status_code == 200:
+        print('Stats updated successfully')
+    else:
+        print('Failed to update stats')
+
     print(f'The predicted class is {predicted_class_name}')
-    ser.write(predicted_class_name.encode())
+    #ser.write(predicted_class_name.encode())
     print('num: {predicted_class_name}')
     
 
 cam = cv2.VideoCapture(0)
-cv2.namedWindow("tsest")
+cv2.namedWindow("test")
 
 while True:
     ret, frame = cam.read()
@@ -60,4 +72,4 @@ while True:
 
 cam.release()
 cv2.destroyAllWindows()
-ser.close()
+#ser.close()
