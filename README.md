@@ -9,4 +9,4 @@ AI: Employing PyTorch and a custom dataset, I trained, validated, and tested a c
 
 Hardware: The physical system, designed in SolidWorks, came to life through the use of laser cutting and 3D printing. Using C++, the Arduino was programmed to control a DC motor that moves an inner tube. Using the Stepper motor library and a motor driver, the stepper motor controlled the opening and closing of the release hatch. These electrical components were meticulously wired and seamlessly integrated with their physical counterparts. 
 
-Website: The frontend was build using Flask to handle the backend, and ReactJS for the frontend
+Website: The frontend was build using Flask to handle the backend, and ReactJS for the frontend.
