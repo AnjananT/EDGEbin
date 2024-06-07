@@ -1,5 +1,5 @@
 # EDGEbin
-![edgeBinlogo (1)](https://github.com/AnjananT/EDGEbin/assets/144964837/d47a42d5-e66f-43bb-afb8-e857815fbecd)
+![edgeBinlogo (2)](https://github.com/AnjananT/EDGEbin/assets/144964837/9a25ae79-22e1-4600-91a3-e2460447671b)
 ![image](https://github.com/AnjananT/EDGEbin/assets/144964837/b22b8642-fe31-4858-b0a1-22988b10c0a9)
 
 
