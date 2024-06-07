@@ -1,5 +1,7 @@
 # EDGEbin
 ![edgeBinlogo](https://github.com/AnjananT/EDGEbin/assets/144964837/60c39b1f-60da-4e51-b562-c7d3e73dce7f)
+![image](https://github.com/AnjananT/EDGEbin/assets/144964837/b22b8642-fe31-4858-b0a1-22988b10c0a9)
+
 
 # What it does
 The EDGEbin utilizes artificial intelligence and a clever mechanical system to automatically identify and sort your trash into four categories: trash, recycling, electronic, and organic. All you have to do is toss your trash into the funnel. Afterwards, the EDGEbin website allows you to track how full your bin is and update when it has been emptied.
